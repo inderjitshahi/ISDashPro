@@ -46,18 +46,18 @@ app.use("/sales", salesRoutes);
 const PORT = process.env.PORT || 5002;
 mongoose
   .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlParser: true,  //to enable the new URL parser for MongoDB. 
+    useUnifiedTopology: true, //to use the new Server Discovery and Monitoring engine. 
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-      //  /* ONLY ADD DATA ONE TIME */
-      //  AffiliateStat.insertMany(dataAffiliateStat);
-      //  OverallStat.insertMany(dataOverallStat);
-      //  Product.insertMany(dataProduct);
-      //  ProductStat.insertMany(dataProductStat);
-      //  Transaction.insertMany(dataTransaction);
-      //  User.insertMany(dataUser);
+    //  /* ONLY ADD DATA ONE TIME */
+    //  AffiliateStat.insertMany(dataAffiliateStat);
+    //  OverallStat.insertMany(dataOverallStat);
+    //  Product.insertMany(dataProduct);
+    //  ProductStat.insertMany(dataProductStat);
+    //  Transaction.insertMany(dataTransaction);
+    //  User.insertMany(dataUser);
   })
   .catch((error) => console.log(`${error} did not connect`));

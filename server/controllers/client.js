@@ -8,6 +8,11 @@ export const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
 
+    /*
+      const allPromises = Promise.all([promise1, promise2, promise3]);
+      Using Promise.all in this way allows the asynchronous operations (like fetching statistics for each product) to be executed concurrently, potentially improving performance compared to executing them sequentially.
+    */
+
     const productsWithStats = await Promise.all(
       products.map(async (product) => {
         const stat = await ProductStat.find({

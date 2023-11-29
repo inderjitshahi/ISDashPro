@@ -6,7 +6,7 @@ const TransactionSchema = new mongoose.Schema(
     cost: String,
     products: {
       type: [mongoose.Types.ObjectId],
-      of: Number,
+      of: Number,  // to specify type of elements in an array
     },
   },
   { timestamps: true }

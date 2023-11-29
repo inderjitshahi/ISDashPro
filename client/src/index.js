@@ -13,8 +13,12 @@ const store = configureStore({
     global: globalReducer,
     [api.reducerPath]: api.reducer,
   },
-  middleware: (getDefault) => getDefault().concat(api.middleware),
+  middleware: (getDefault) => getDefault().concat(api.middleware), // responsible for intercepting actions dispatched by your API slice and handling them appropriately. 
 });
+
+
+// The API slice automatically dispatches actions based on the API request lifecycle
+// (e.g., 'api/fetchUser/pending', 'api/fetchUser/fulfilled', 'api/fetchUser/rejected')
 setupListeners(store.dispatch);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

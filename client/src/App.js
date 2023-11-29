@@ -24,6 +24,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
+          {/* It applies basic styles to elements to ensure a consistent visual appearance across different browsers */}
           <CssBaseline />
           <Routes>
             <Route element={<Layout />}>
